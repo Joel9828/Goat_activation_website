@@ -649,6 +649,8 @@
             <input type="hidden" name="_subject" value="New booking request — Akashic Amit" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
+            <!-- Set by JS to this page + ?sent=1, used only by the no-CORS fallback path. -->
+            <input type="hidden" name="_next" value="" />
             <div class="hp" aria-hidden="true">
               <label for="company">Company</label>
               <input type="text" id="company" name="_honey" tabindex="-1" autocomplete="off" />
@@ -774,24 +776,51 @@
     const status = document.getElementById('formStatus');
     const EMAIL = 'theakashicamit@gmail.com';
 
+    // AJAX endpoint (stays on the page) and the plain one used by the fallback.
+    const ACTION_PLAIN = form.action.replace('/ajax/', '/');
+    const nextUrl = () => location.origin + location.pathname + '?sent=1';
+    let retried = false;
+
+    // Coming back from the no-CORS fallback: show the receipt, clean the URL.
+    if(new URLSearchParams(location.search).get('sent') === '1'){
+      status.textContent = 'Thank you — your request is in. I’ll be in touch soon.';
+      status.className = 'form-status show ok';
+      history.replaceState(null, '', location.pathname + '#request');
+      requestAnimationFrame(() => status.scrollIntoView({block:'center', behavior:'smooth'}));
+    }
+
     const LABELS = {
       name:'Name', email:'Email', organization:'Organization', phone:'Phone',
       experience_type:'Type of experience', event_date:'Event date', location:'Location',
       audience_size:'Audience size', budget:'Budget range', vision:'Event and vision'
     };
 
+    // Plain object of pretty-labelled answers (used for the mailto fallback).
     function payload(){
       const d = new FormData(form), out = {};
       for(const k of Object.keys(LABELS)){
         const v = (d.get(k) || '').toString().trim();
         if(v) out[LABELS[k]] = v;
       }
-      // FormSubmit control fields (underscore-prefixed) pass straight through.
-      out._subject  = d.get('_subject');
-      out._template = d.get('_template');
-      out._captcha  = d.get('_captcha');
-      out._honey    = d.get('_honey') || '';
       return out;
+    }
+
+    // Same data as multipart FormData. Deliberately NOT JSON: an
+    // application/json content-type triggers a CORS preflight (OPTIONS) that
+    // FormSubmit handles unreliably. multipart/form-data is CORS-safelisted,
+    // so the POST goes straight through with no preflight.
+    function body(){
+      const d = new FormData(form);
+      const fd = new FormData();
+      for(const k of Object.keys(LABELS)){
+        const v = (d.get(k) || '').toString().trim();
+        if(v) fd.append(LABELS[k], v);
+      }
+      // FormSubmit control fields pass through untouched.
+      fd.append('_subject',  d.get('_subject')  || 'New booking request');
+      fd.append('_template', d.get('_template') || 'table');
+      fd.append('_captcha',  d.get('_captcha')  || 'false');
+      return fd;
     }
 
     function mailtoHref(){
@@ -810,7 +839,51 @@
       status.textContent = msg;
       status.className = 'form-status show ok';
     }
-    function fail(){
+    // Last resort: a classic (non-AJAX) form POST. This is a normal browser
+    // navigation, so CORS never applies and it cannot be blocked. FormSubmit
+    // redirects back here via _next, and the ?sent=1 handler shows the receipt.
+    function nativePost(){
+      const f = document.createElement('form');
+      f.method = 'POST';
+      f.action = ACTION_PLAIN;
+      f.style.display = 'none';
+      const add = (k, v) => {
+        const i = document.createElement('input');
+        i.type = 'hidden'; i.name = k; i.value = v;
+        f.appendChild(i);
+      };
+      const p = payload();
+      Object.keys(p).forEach(k => add(k, p[k]));
+      add('_subject',  form.querySelector('[name="_subject"]').value);
+      add('_template', 'table');
+      add('_captcha',  'false');
+      add('_next',     nextUrl());
+      document.body.appendChild(f);
+      f.submit();
+    }
+
+    function fail(reason){
+      // Surface the real cause in the console for whoever is debugging the page.
+      if(reason) console.error('[booking form] AJAX submission failed:', reason);
+
+      // Opening the page from disk (file://) sends Origin: null, which every form
+      // backend rejects. Nothing is wrong with the form — it needs to be served.
+      if(location.protocol === 'file:'){
+        status.innerHTML = '<strong>Local preview:</strong> form backends reject submissions ' +
+          'from <code>file://</code> pages. Upload the site (or run a local server) and this ' +
+          'will work. Everything else on the page is fine.';
+        status.className = 'form-status show err';
+        return;
+      }
+
+      // Served page: retry once via the no-CORS path before giving up.
+      if(!retried){
+        retried = true;
+        ok('Sending your request…');
+        nativePost();
+        return;
+      }
+
       status.innerHTML = 'That didn’t send. <a href="' + mailtoHref() +
         '">Send it as an email instead</a> — your answers are already filled in — ' +
         'or write to ' + EMAIL + '.';
@@ -838,8 +911,8 @@
       try{
         const res = await fetch(form.action, {
           method:'POST',
-          headers:{'Content-Type':'application/json', 'Accept':'application/json'},
-          body:JSON.stringify(payload())
+          headers:{'Accept':'application/json'},   // no Content-Type: avoids preflight
+          body:body()
         });
         let data = {};
         try{ data = await res.json(); }catch(_){}
@@ -849,10 +922,10 @@
           form.reset();
           ok('Thank you — your request is in. I’ll be in touch soon.');
         }else{
-          fail();
+          fail('HTTP ' + res.status + ' — ' + JSON.stringify(data));
         }
       }catch(err){
-        fail();
+        fail(err);
       }finally{
         btn.disabled = false;
         btn.innerHTML = label;
