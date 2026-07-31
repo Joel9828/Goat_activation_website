@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Investment &amp; Booking — Akashic Amit</title>
+<meta name="description" content="Book Akashic Amit for live performances, speaking engagements, workshops, podcasts and purpose-driven events. Every event is custom quoted based on audience, location, travel and experience." />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Investment & Booking — Akashic Amit" />
+<meta property="og:description" content="Tell me about your event, your audience, and your vision. Let's create something meaningful." />
+<meta property="og:url" content="https://portal.goatactivation.com/booking.html" />
+
+<link rel="canonical" href="https://portal.goatactivation.com/booking.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Akashic Amit — Live Performances, Speaking & Workshops",
+  "serviceType": "Live performance, speaking engagement, workshop",
+  "url": "https://portal.goatactivation.com/booking.html",
+  "provider": {
+    "@type": "Person",
+    "name": "Akashic Amit",
+    "url": "https://portal.goatactivation.com/",
+    "email": "theakashicamit@gmail.com"
+  },
+  "offers": [
+    {"@type":"Offer","name":"Live Performances","priceCurrency":"USD","price":"500","priceSpecification":{"@type":"PriceSpecification","minPrice":"500","priceCurrency":"USD"}},
+    {"@type":"Offer","name":"Speaking Engagements","priceCurrency":"USD","price":"1000","priceSpecification":{"@type":"PriceSpecification","minPrice":"1000","priceCurrency":"USD"}},
+    {"@type":"Offer","name":"Performance + Motivational Experience","priceCurrency":"USD","price":"2000","priceSpecification":{"@type":"PriceSpecification","minPrice":"2000","priceCurrency":"USD"}},
+    {"@type":"Offer","name":"Workshops & Community Events","description":"Custom quote"},
+    {"@type":"Offer","name":"Podcasts, Interviews & Collaborations","description":"Contact for availability"}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --paper:#F7EFE9;
+    --paper-2:#F1E3DB;
+    --glow:#FBE1D3;
+    --ink:#33272B;
+    --ink-soft:#6A585B;
+    --accent:#A85A63;
+    --accent-deep:#8C4650;
+    --line:#E4D5CC;
+
+    --grad:linear-gradient(120deg, #E88A5E 0%, #C85C74 55%, #7E3E52 100%);
+    --grad-soft:linear-gradient(120deg, #F0A277 0%, #D06E84 60%, #8C4650 100%);
+
+    --serif:"Newsreader", Georgia, "Times New Roman", serif;
+    --sans:"Hanken Grotesk", system-ui, -apple-system, sans-serif;
+
+    --wrap:1120px;
+    --gutter:clamp(1.4rem, 5vw, 4rem);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:var(--wrap);
+    margin:0 auto;
+    padding-inline:var(--gutter);
+  }
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed;
+    inset:.85rem 0 auto 0;
+    z-index:50;
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    height:auto;
+    padding:.5rem .5rem .5rem 1.5rem;
+    border-radius:100px;
+    background:color-mix(in srgb, var(--paper) 66%, transparent);
+    -webkit-backdrop-filter:blur(16px) saturate(1.25);
+    backdrop-filter:blur(16px) saturate(1.25);
+    border:1px solid color-mix(in srgb, var(--ink) 9%, transparent);
+    box-shadow:0 12px 34px -20px rgba(51,39,43,.5);
+    transition:box-shadow .4s ease, background .4s ease;
+  }
+  header.nav.scrolled .nav-inner{
+    background:color-mix(in srgb, var(--paper) 82%, transparent);
+    box-shadow:0 16px 40px -20px rgba(51,39,43,.6);
+  }
+  .brand{
+    font-family:var(--serif);
+    font-size:1.25rem;
+    font-weight:500;
+    letter-spacing:.01em;
+    text-decoration:none;
+  }
+  .nav-links{
+    display:flex;
+    gap:1.6rem;
+    align-items:center;
+  }
+  .nav-links a.nav-cta{
+    text-decoration:none;
+    font-weight:600;
+    font-size:.85rem;
+    letter-spacing:.02em;
+    color:#fff;
+    background:var(--grad);
+    padding:.6rem 1.25rem;
+    border-radius:100px;
+    box-shadow:0 8px 20px -10px rgba(126,62,82,.7);
+    transition:transform .25s ease, filter .25s ease;
+  }
+  .nav-links a.nav-cta:hover{color:#fff; transform:translateY(-1px); filter:brightness(1.06);}
+  .nav-cta::after{display:none;}
+  .nav-links a{
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:500;
+    letter-spacing:.02em;
+    color:var(--ink-soft);
+    transition:color .25s ease;
+    position:relative;
+  }
+  .nav-links a:hover{color:var(--accent);}
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    height:1.5px;
+    width:0;
+    background:var(--accent);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-links a[aria-current="page"]{color:var(--accent);}
+  @media (max-width:680px){
+    .nav-links a:not(.nav-cta){display:none;}
+    .nav-inner{padding-left:1.2rem;}
+    .brand{font-size:1.05rem;}
+  }
+
+  /* ---------- page hero ---------- */
+  .page-hero{
+    position:relative;
+    overflow:hidden;
+    padding-block:clamp(8rem, 16vw, 11rem) clamp(3rem, 7vw, 5rem);
+    background:
+      radial-gradient(48% 60% at 10% 0%, #FBD9C6 0%, transparent 62%),
+      radial-gradient(46% 60% at 92% 6%, #F4CEDA 0%, transparent 60%),
+      var(--paper);
+  }
+  .page-hero::after{
+    content:"";
+    position:absolute;
+    bottom:-22vmin;
+    right:-10vmin;
+    width:56vmin;
+    height:56vmin;
+    background:radial-gradient(circle, rgba(160,110,190,.24) 0%, transparent 68%);
+    filter:blur(20px);
+    pointer-events:none;
+  }
+  .page-hero .wrap{position:relative; z-index:2;}
+  .page-hero h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(2.6rem, 1.6rem + 5vw, 5rem);
+    line-height:1.02;
+    letter-spacing:-.01em;
+    margin:.6rem 0 1.4rem;
+    max-width:14ch;
+    background:linear-gradient(102deg, #33272B 0%, #7E3E52 58%, #C05C74 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .accent-rule{
+    display:block;
+    height:3px;
+    width:0;
+    background:var(--grad);
+    border-radius:3px;
+    margin:0 0 2rem;
+    animation:growRule .9s ease .5s both;
+  }
+  @keyframes growRule{to{width:64px;}}
+  .lede{
+    max-width:62ch;
+    font-size:clamp(1.05rem, 1rem + .35vw, 1.25rem);
+    color:var(--ink-soft);
+    margin:0 0 1.4rem;
+  }
+  .mission{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:clamp(1.5rem, 1.1rem + 1.8vw, 2.3rem);
+    line-height:1.35;
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    max-width:22ch;
+    margin:2rem 0 0;
+  }
+
+  /* ---------- buttons ---------- */
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem 1.5rem;
+    align-items:center;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    background:var(--grad);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.01em;
+    padding:.95rem 1.7rem;
+    border:0;
+    border-radius:999px;
+    font-family:var(--sans);
+    cursor:pointer;
+    box-shadow:0 14px 30px -14px rgba(126,62,82,.75);
+    transition:transform .25s ease, filter .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{filter:brightness(1.06); transform:translateY(-2px); box-shadow:0 20px 38px -16px rgba(126,62,82,.8);}
+  .btn .arrow{transition:transform .25s ease;}
+  .btn:hover .arrow{transform:translateX(3px);}
+  .link-quiet{
+    text-decoration:none;
+    font-weight:600;
+    font-size:.95rem;
+    color:var(--ink);
+    border-bottom:1.5px solid var(--accent);
+    padding-bottom:2px;
+    transition:color .25s ease;
+  }
+  .link-quiet:hover{color:var(--accent);}
+
+  /* ---------- sections ---------- */
+  section{padding-block:clamp(4rem, 9vw, 7rem);}
+  .band{background:var(--paper-2);}
+
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin-bottom:1.4rem;
+  }
+  .section-head::before{
+    content:"";
+    flex:none;
+    width:32px;
+    height:4px;
+    border-radius:4px;
+    background:var(--grad);
+  }
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(2rem, 1.4rem + 2.4vw, 3.2rem);
+    line-height:1.05;
+    margin:0;
+  }
+  .section-sub{
+    max-width:60ch;
+    color:var(--ink-soft);
+    margin:0 0 2.8rem;
+  }
+
+  /* ---------- investment tiers ---------- */
+  .tiers{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.2rem;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  @media (min-width:720px){
+    .tiers{grid-template-columns:1fr 1fr; gap:1.4rem;}
+  }
+  @media (min-width:1000px){
+    .tiers{grid-template-columns:repeat(3, 1fr);}
+  }
+  .tier{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:.35rem;
+    overflow:hidden;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:clamp(1.5rem, 3vw, 2.1rem);
+    box-shadow:0 20px 50px -34px rgba(51,39,43,.4);
+    transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease;
+  }
+  .tier::before{
+    content:"";
+    position:absolute;
+    inset:0 0 auto 0;
+    height:4px;
+    background:var(--grad);
+  }
+  .tier:hover{transform:translateY(-4px); box-shadow:0 28px 60px -34px rgba(51,39,43,.5);}
+  .tier h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.4rem;
+    line-height:1.25;
+    margin:.4rem 0 0;
+  }
+  .tier .amount{
+    font-family:var(--serif);
+    font-size:2rem;
+    font-weight:500;
+    line-height:1.1;
+    margin:.5rem 0 0;
+    background:var(--grad);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .tier .amount .from{
+    display:block;
+    font-family:var(--sans);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    -webkit-text-fill-color:var(--ink-soft);
+    margin-bottom:.15rem;
+  }
+  .tier .amount.custom{font-size:1.5rem;}
+  .tier p{margin:.7rem 0 0; color:var(--ink-soft); font-size:.95rem;}
+
+  .note{
+    margin:2.4rem 0 0;
+    padding:1.4rem 1.6rem;
+    border-left:3px solid var(--accent);
+    background:color-mix(in srgb, var(--glow) 45%, transparent);
+    border-radius:0 14px 14px 0;
+    color:var(--ink-soft);
+    max-width:70ch;
+  }
+  .note strong{color:var(--ink);}
+
+  /* ---------- booking form ---------- */
+  .book-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:3rem;
+  }
+  @media (min-width:900px){
+    .book-grid{grid-template-columns:.85fr 1.15fr; gap:4rem; align-items:start;}
+  }
+  .book-aside .contact-line{margin:1.4rem 0 0;}
+  .book-aside .contact-line a{color:var(--accent-deep); text-decoration:none; border-bottom:1.5px solid var(--accent); padding-bottom:2px; word-break:break-word;}
+  .avail{list-style:none; margin:1.4rem 0 0; padding:0;}
+  .avail li{
+    padding:.85rem 0;
+    border-top:1px solid var(--line);
+    font-size:1rem;
+  }
+  .avail li:last-child{border-bottom:1px solid var(--line);}
+
+  form.booking{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:clamp(1.6rem, 3.5vw, 2.6rem);
+    box-shadow:0 20px 50px -34px rgba(51,39,43,.4);
+  }
+  .band form.booking{background:var(--paper);}
+  .field{margin:0 0 1.3rem;}
+  .field-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0 1.2rem;
+  }
+  @media (min-width:560px){
+    .field-row{grid-template-columns:1fr 1fr;}
+  }
+  .field label{
+    display:block;
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:.5rem;
+  }
+  .field label .req{color:var(--accent);}
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    font-family:var(--sans);
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--ink);
+    background:color-mix(in srgb, var(--paper-2) 55%, #fff);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:.8rem 1rem;
+    transition:border-color .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .field textarea{min-height:150px; resize:vertical;}
+  .field select{
+    appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' fill='none' stroke='%236A585B' stroke-width='2' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 1rem center;
+    padding-right:2.6rem;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    outline:none;
+    background:#fff;
+    border-color:var(--accent);
+    box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .field input::placeholder,
+  .field textarea::placeholder{color:color-mix(in srgb, var(--ink-soft) 62%, transparent);}
+  .form-foot{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:1rem 1.4rem;
+    margin-top:1.8rem;
+  }
+  .form-foot .fineprint{margin:0; font-size:.85rem; color:var(--ink-soft);}
+  .form-status{
+    margin:1.2rem 0 0;
+    padding:.9rem 1.1rem;
+    border-radius:12px;
+    font-size:.95rem;
+    display:none;
+  }
+  .form-status.show{display:block;}
+  .form-status.ok{background:color-mix(in srgb, var(--glow) 60%, transparent); border:1px solid var(--line); color:var(--ink);}
+  .form-status.err{background:color-mix(in srgb, var(--accent) 12%, transparent); border:1px solid color-mix(in srgb, var(--accent) 35%, transparent); color:var(--accent-deep);}
+  .form-status a{color:inherit; font-weight:600; text-decoration:underline; text-underline-offset:2px;}
+  .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+
+  /* ---------- closing ---------- */
+  .closing{text-align:center;}
+  .closing .section-head{justify-content:center;}
+  .closing .section-sub{margin-inline:auto;}
+  .closing .cta-row{justify-content:center;}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding-block:3.5rem;
+    border-top:1px solid var(--line);
+  }
+  .foot-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+  }
+  .foot-inner .brand{font-size:1.4rem;}
+  .foot-inner p{margin:.4rem 0 0; color:var(--ink-soft); font-size:.9rem;}
+  .foot-note{font-size:.85rem; color:var(--ink-soft);}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  .tiers .tier:nth-child(2){transition-delay:.08s;}
+  .tiers .tier:nth-child(3){transition-delay:.16s;}
+  .tiers .tier:nth-child(4){transition-delay:.24s;}
+  .tiers .tier:nth-child(5){transition-delay:.32s;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    .accent-rule{animation:none; width:64px;}
+    .tier:hover{transform:none;}
+  }
+
+  :focus-visible{outline:2.5px solid var(--accent); outline-offset:3px; border-radius:3px;}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html#top" class="brand">Akashic Amit</a>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#music">Music</a>
+      <a href="index.html#family">Family</a>
+      <a href="index.html#connect">Connect</a>
+      <a href="booking.html" aria-current="page">Booking</a>
+      <a class="nav-cta" href="#request">Request a Booking</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Investment &amp; Booking</p>
+      <h1>Let's create something meaningful</h1>
+      <span class="accent-rule" aria-hidden="true"></span>
+      <p class="lede">Every event is unique, so the investment is customized based on the audience, location, travel, and the type of experience you're looking to create.</p>
+      <p class="lede">Whether it's an intimate acoustic performance, a keynote, a podcast appearance, or a purpose-driven event, my goal is simple:</p>
+      <blockquote class="mission">Leave people better than I found them.</blockquote>
+      <div class="cta-row" style="margin-top:2.6rem;">
+        <a class="btn" href="#request">Request a booking <span class="arrow">&rarr;</span></a>
+        <a class="link-quiet" href="#investment">See typical investment</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="investment" class="band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Typical investment</h2>
+      </div>
+      <p class="section-sub reveal">Starting figures to help you plan. Final quotes reflect audience size, location, travel, and the scope of the experience.</p>
+
+      <ul class="tiers">
+        <li class="tier reveal">
+          <p class="eyebrow">Live</p>
+          <h3>Live Performances</h3>
+          <p class="amount"><span class="from">Starting at</span>$500</p>
+          <p>Intimate acoustic sets through to full live performances.</p>
+        </li>
+        <li class="tier reveal">
+          <p class="eyebrow">Speaking</p>
+          <h3>Speaking Engagements</h3>
+          <p class="amount"><span class="from">Starting at</span>$1,000</p>
+          <p>Keynotes and talks on hope, resilience, purpose, and connection.</p>
+        </li>
+        <li class="tier reveal">
+          <p class="eyebrow">Signature</p>
+          <h3>Performance + Motivational Experience</h3>
+          <p class="amount"><span class="from">Starting at</span>$2,000</p>
+          <p>Music and message woven into one experience your audience carries home.</p>
+        </li>
+        <li class="tier reveal">
+          <p class="eyebrow">Community</p>
+          <h3>Workshops &amp; Community Events</h3>
+          <p class="amount custom"><span class="from">Investment</span>Custom quote</p>
+          <p>Built around your group, your goals, and the time we have together.</p>
+        </li>
+        <li class="tier reveal">
+          <p class="eyebrow">Media</p>
+          <h3>Podcasts, Interviews &amp; Collaborations</h3>
+          <p class="amount custom"><span class="from">Investment</span>Contact for availability</p>
+          <p>Always glad to talk with shows and creators telling real stories.</p>
+        </li>
+      </ul>
+
+      <p class="note reveal"><strong>A note on fit.</strong> If your event aligns with the mission of inspiring hope, resilience, purpose, and genuine human connection, I'd love to hear about it.</p>
+    </div>
+  </section>
+
+  <section id="request">
+    <div class="wrap">
+      <div class="book-grid">
+        <div class="book-aside reveal">
+          <div class="section-head">
+            <h2>Request a booking</h2>
+          </div>
+          <p class="section-sub" style="margin-bottom:0;">Tell me about your event, your audience, and your vision. Together, we'll create an experience that people will remember long after the music ends.</p>
+
+          <p class="eyebrow" style="margin-top:2.4rem;">Available for</p>
+          <ul class="avail">
+            <li>Live shows and performances</li>
+            <li>Speaking engagements and keynotes</li>
+            <li>Workshops and community events</li>
+            <li>Podcasts, interviews and collaborations</li>
+          </ul>
+
+          <p class="eyebrow" style="margin-top:2.4rem;">Prefer email?</p>
+          <p class="contact-line">Reach out directly at <a href="mailto:theakashicamit@gmail.com">theakashicamit@gmail.com</a></p>
+        </div>
+
+        <div class="reveal">
+          <!--
+            ========================= FormSubmit — ACTIVATION =========================
+            No account and no API key. The form below is already live, but FormSubmit
+            requires a one-time activation before it will deliver anything:
+
+              1. Publish the site, open this page, and send one test submission.
+              2. FormSubmit emails theakashicamit@gmail.com a confirmation link.
+                 Click it. (Check spam if it isn't there in a minute.)
+              3. Done — every submission from then on lands in that inbox. Free, unlimited.
+
+            OPTIONAL, recommended — hide the email address from page source:
+              After activating, FormSubmit shows a random alias string for this address.
+              Swap it into the action below, i.e.
+                 action="https://formsubmit.co/ajax/a1b2c3d4e5f6..."
+              Same behaviour, but scrapers no longer see the address in the HTML.
+
+            NOTE: FormSubmit forwards to email only — there is no dashboard and no stored
+            history. If a delivery is lost, the submission is gone. Consider adding a
+            Gmail filter + label for "New booking request" so none get buried.
+            =========================================================================
+          -->
+          <form class="booking" id="bookingForm" action="https://formsubmit.co/ajax/theakashicamit@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="New booking request — Akashic Amit" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="hp" aria-hidden="true">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="_honey" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Your name <span class="req">*</span></label>
+                <input type="text" id="name" name="name" required autocomplete="name" placeholder="First and last" />
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="organization">Organization</label>
+                <input type="text" id="organization" name="organization" autocomplete="organization" placeholder="Optional" />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Optional" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="type">Type of experience <span class="req">*</span></label>
+              <select id="type" name="experience_type" required>
+                <option value="" selected disabled>Select one</option>
+                <option>Live Performance — from $500</option>
+                <option>Speaking Engagement — from $1,000</option>
+                <option>Performance + Motivational Experience — from $2,000</option>
+                <option>Workshop / Community Event — custom quote</option>
+                <option>Podcast, Interview or Collaboration</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="date">Event date</label>
+                <input type="date" id="date" name="event_date" />
+              </div>
+              <div class="field">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="City, State / venue" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="audience">Audience size</label>
+                <input type="text" id="audience" name="audience_size" placeholder="Approximate" />
+              </div>
+              <div class="field">
+                <label for="budget">Budget range</label>
+                <input type="text" id="budget" name="budget" placeholder="Optional" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="vision">Your event and vision <span class="req">*</span></label>
+              <textarea id="vision" name="vision" required placeholder="Who is in the room, what the day looks like, and what you want people to walk away with."></textarea>
+            </div>
+
+            <div class="form-foot">
+              <button type="submit" class="btn">Send request <span class="arrow">&rarr;</span></button>
+              <p class="fineprint">I read every message and reply personally.</p>
+            </div>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band closing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Long after the music ends</h2>
+      </div>
+      <p class="section-sub reveal">Music is either medicine or poison. I choose the first — and I'd love to bring that to your people.</p>
+      <div class="cta-row reveal">
+        <a class="btn" href="#request">Request a booking <span class="arrow">&rarr;</span></a>
+        <a class="link-quiet" href="mailto:theakashicamit@gmail.com">theakashicamit@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <a href="index.html#top" class="brand">Akashic Amit</a>
+      <p>Music with something to say.</p>
+    </div>
+    <p class="foot-note">&copy; <span id="year"></span> Akashic Amit</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---- booking form: FormSubmit AJAX with mailto fallback ---- */
+  (function(){
+    const form = document.getElementById('bookingForm');
+    const status = document.getElementById('formStatus');
+    const EMAIL = 'theakashicamit@gmail.com';
+
+    const LABELS = {
+      name:'Name', email:'Email', organization:'Organization', phone:'Phone',
+      experience_type:'Type of experience', event_date:'Event date', location:'Location',
+      audience_size:'Audience size', budget:'Budget range', vision:'Event and vision'
+    };
+
+    function payload(){
+      const d = new FormData(form), out = {};
+      for(const k of Object.keys(LABELS)){
+        const v = (d.get(k) || '').toString().trim();
+        if(v) out[LABELS[k]] = v;
+      }
+      // FormSubmit control fields (underscore-prefixed) pass straight through.
+      out._subject  = d.get('_subject');
+      out._template = d.get('_template');
+      out._captcha  = d.get('_captcha');
+      out._honey    = d.get('_honey') || '';
+      return out;
+    }
+
+    function mailtoHref(){
+      const p = payload();
+      const body = Object.keys(LABELS)
+        .map(k => LABELS[k])
+        .filter(l => p[l])
+        .map(l => l + ': ' + p[l])
+        .join('\n');
+      return 'mailto:' + EMAIL +
+        '?subject=' + encodeURIComponent('Booking request — ' + (p.Name || '')) +
+        '&body=' + encodeURIComponent(body);
+    }
+
+    function ok(msg){
+      status.textContent = msg;
+      status.className = 'form-status show ok';
+    }
+    function fail(){
+      status.innerHTML = 'That didn’t send. <a href="' + mailtoHref() +
+        '">Send it as an email instead</a> — your answers are already filled in — ' +
+        'or write to ' + EMAIL + '.';
+      status.className = 'form-status show err';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if(!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
+      // Honeypot tripped: pretend success, send nothing.
+      if((form.querySelector('[name="_honey"]') || {}).value){
+        ok('Thank you — your request is in.');
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]');
+      const label = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Sending…';
+
+      try{
+        const res = await fetch(form.action, {
+          method:'POST',
+          headers:{'Content-Type':'application/json', 'Accept':'application/json'},
+          body:JSON.stringify(payload())
+        });
+        let data = {};
+        try{ data = await res.json(); }catch(_){}
+        // FormSubmit returns success as the string "true".
+        const sent = res.ok && String(data.success) !== 'false';
+        if(sent){
+          form.reset();
+          ok('Thank you — your request is in. I’ll be in touch soon.');
+        }else{
+          fail();
+        }
+      }catch(err){
+        fail();
+      }finally{
+        btn.disabled = false;
+        btn.innerHTML = label;
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
